@@ -1,1 +1,6 @@
+WITH BORDER
 <iframe src="https://rawcdn.githack.com/machetebot/machetebot.github.io/0cdf5d65f8336313e12637aa68cc959090f3267a/img/zharlzzz.html" style="border:0px solid #1a1a1a;" width="402px" height="360px"></iframe>
+
+
+NO BORDER
+<iframe frameborder="0" scrolling="no" style="height:70px;width:160px;border:none;" src='https://zharlzzz.blogspot.com/2024/07/widgeo.html?m=0'></iframe>
