@@ -1,3 +1,92 @@
+<html>
+  <head>
+</head>
+  <body>
+<!--PLAYER - Блок расположения плеера. Плееры: default, lite, energy или custom (свой плеер) (можно несколько) -->
+<div id="my_player" class="my_player" data-player="energy" data-skin="red" data-width=200 data-autoplay=1 data-volume=100 data-streamurl="https://myradio24.org/2666"></div>
+<!--END PLAYER-->
+
+<!--JS - Функция для детальной настройки обновляемой информации. -->
+<script>
+var my_init_updateinfo=function(info) {
+  //ОТОБРАЗИМ стол заказов, если включен (иначе скроем)
+  if($("#my_table_on").length) {
+    $("#my_table_turn, .my_table_turn").html(info.turntable);
+    $("#my_table_off").css('display', (info.enabletable==0?"block":"none") );  
+    $("#my_table_on").css('display', (info.enabletable==1?"block":"none") );  
+    $("#my_table_auto").css('display', (info.enabletable==2?"block":"none") );
+  }
+  //ОБНОВИМ информационные блоки
+  info.isonline="<font color=red>оффлайн</font>"; 
+  if(info.online==1) info.isonline="<font color=green>онлайн</font>"; 
+  info.nextsong=info.nextsongs[0];
+  
+  info.htmlimg="<img src=//myradio24.com/"+info.img+" width=300 border=0>";
+  info.htmllogo=""; if(info.logo) info.htmllogo="<img src='//myradio24.com/"+info.logo+"'>";
+  info.htmlavatar=""; if(window.my_avatars && Array.isArray(my_avatars)) { if(my_avatars[info.djname]) info.htmlavatar=my_avatars[info.djname]; else if(my_avatars['']) info.htmlavatar=my_avatars['']; }
+  //рейтинг ведущих
+  var rank=info.rank; var htmlrank="";
+  if(rank && rank.length>0) {
+    rank.sort(function(a,b) {return b[1]-a[1];}); 
+    for(var i=0;i<rank.length;i++) {
+      htmlrank+="<div style='display:inline-block; width:220px; margin:5px;'><div style='float:left; width:100px; height:100px;  border:1px solid #ccc; border-radius:50px; background:url(https://myradio24.com/"+rank[i][4]+"); background-size:cover;'></div>";
+      htmlrank+="<div style='float:left; padding:15px 0 0 10px; text-align:left;'><b>"+rank[i][0]+"</b><br>"+rank[i][3]+" вещаний<br>"+rank[i][2]+" часов<br>"+rank[i][1]+" рейтинг</div></div>";
+    }    
+  }
+  else htmlrank="Ничего не найдено.";
+  info.htmlrank=htmlrank;
+  //последние песни
+  var songs=info.songs; var htmlsongs=""; 
+  //console.dir(songs);
+  if(songs && songs.length>0) {for(var i=0;i<songs.length;i++) {htmlsongs="<tr><td>"+songs[i][0]+" - "+songs[i][1]+"</td></tr>"+htmlsongs;} htmlsongs="<table class='my_radio_width'>"+htmlsongs+"</table>";}
+  else htmlsongs="Ничего не найдено.";
+  info.htmlsongs=htmlsongs;
+  //вставка переменных в data-myinfo
+  $('[data-myinfo]').each(function() {
+    var key=$(this).data('myinfo');
+    if(key && info[key]) {
+      if(key=='img') $(this).css('background-image','url('+info[key]+')');
+      else $(this).html(info[key]); 
+    }
+  });
+  //произведем замену переменных и выведем содержимое информера
+  var objs=document.querySelectorAll(".my_info"); if(!objs.length) return; 
+  if(!window.my_infohtml) my_infohtml={}; 
+  for(var k=0;k<objs.length; k++) {
+    if(!my_infohtml[k]) {my_infohtml[k]=objs[k].innerHTML; objs[k].style.visibility="visible";}
+    var html=my_infohtml[k];
+    for(var i in info) {html=html.replace(new RegExp("%"+i+"%","g"),info[i]);}
+    objs[k].innerHTML=html;
+  }
+}
+</script>
+<!--END JS-->
+        </td>
+        <td>
+            <a href="https://myradio24.org/2666.m3u" target="_blank"><img src="//myradio24.com/img/wmp.gif" title="WMP" width="30" height="25" border="0" alt="" /></a>
+        </td>
+    </tr>
+</table>
+
+
+<font size="3"color="White">
+Интернет Радиостанция SPB1-это возможность слушать радио онлайн бесплатно через Интернет.
+Радио онлайн SPB1 транслируется круглосуточно. Отличная музыка.
+Радио SPB1-это то самое измерение,в котором вы возможно останетесь навсегда,не пожалев о своём выборе.С нами не скучно отдыхать,с нами легко связаться,с нами выгодно сотрудничать! Вы можете слушать интернет радио круглосуточно и без установки дополнительных программ,просто открыв в браузере наш сайт.Мы стараемся вещать в стиле танцевальной музыки. С улучшением скорости и качества интернета прослушивание радио онлайн становится более удобным,чем прослушивание традиционного FM радио приёмника.
+
+<br><br>
+<marquee behavior="scroll" scrollamount="3" width="550" height="20" onmouseover="this.scrollAmount=0" onmouseout="this.scrollAmount=3"><b><font color="#7CFC00">Интернет Онлайн Радио SPB1 приглашаем к
+сотрудничеству Dj и музыкантов которые занимаются музыкой танцевальной направленности. обращаться 6AHguT@inbox.ru. &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; Спасибо что
+выбрали наше радио!</font></b></marquee><font color="#7CFC00"><font color="#7CFC00"><br /></font></font>
+<br>
+
+  
+<table>
+    <tr>
+      
+
+
+
 Original
 <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5hh9fex1885&amp;m=7&amp;c=ff0000&amp;cr1=ffffff&amp;f=verdana&amp;l=33&amp;hc=ffffff" async="async"></script>
 
@@ -19,3 +108,14 @@ Animated Map
 
 24 hour widget
 <script type="text/javascript" src="//rf.revolvermaps.com/0/0/0.js?i=5hh9fex1885&amp;d=3&amp;p=0&amp;b=0&amp;w=293&amp;g=2&amp;f=arial&amp;fs=12&amp;r=0&amp;c0=362b05&amp;c1=375363&amp;c2=000000&amp;ic0=0&amp;ic1=0" async="async"></script>
+
+  
+
+<!--Этот скрипт должен располагаться в самом низу после всех блоков и не должен повторяться на странице. -->
+<script src="//myradio24.com/player/player.js?v3.20" data-port="2666" data-interval=15></script>
+
+
+  </body>
+</html>
+
+      
