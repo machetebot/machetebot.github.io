@@ -172,7 +172,7 @@ void main(){
 
 //************** Utility functions **************
 
-window.addEventListener('resize', onWindowResize, false);
+window.addEventListener('resize', onWindowResize, true);
 
 function onWindowResize(){
   canvas.width  = window.innerWidth;
