@@ -18,14 +18,25 @@ window.setInterval(
 ,400);
 </script>
 
-<!--INFOS - Информация о радио -->
-<div data-myinfo="logo" style="width:300px; height:80px; background-size:cover;"></div>
-<div data-myinfo="img" style="width:300px; height:300px; background-size:cover;"></div>
-<br>
-<b data-myinfo="song"></b><br>
-<br>
-🎧 <b data-myinfo="listeners"></b> <span data-myinfo="isonline"></span> - <span data-myinfo="kbps"></span> kbps
-<a href="https://myradio24.org/75176.m3u" target="_blank"><img src="https://myradio24.com/img/wmp.gif" title="Слушать радио в плеере" /></a>
-<a href="https://myradio24.com/en/player/75176" onclick="window.open(this.href,'player','width=300,height=30'); return false;"><img src="https://myradio24.com/img/open.gif" title="Слушать радио в новом окне"/></a>
+<!--TABLE - Блок расположения стола заказов. -->
+<b>Стол заказов</b> (в очереди <b class=my_table_turn>0</b>)<br><br>
+<div id=my_table_off>Сейчас заказы не принимаются.</div>
+<div id=my_table_auto style="display:none;">
+	<form action="https://myradio24.com/en/table/75176" method="post" target="_blank"><input type=submit value="Заказать музыку к исполнению"></form>
+</div>
+<div id=my_table_on style="display:none;">
+	<form id=my_table_form action="" method=post accept-charset="UTF-8">	
+		<input type=text id=my_table_from maxlength=30 value="" placeholder="От кого*">
+		<input type=text id=my_table_for maxlength=30 value="" placeholder="Для кого">
+		<br>
+		<input type=text id=my_table_artist maxlength=50 value="" placeholder="Исполнитель*">
+		<input type=text id=my_table_song maxlength=50 value="" placeholder="Название трека*">
+		<br>
+		<textarea id=my_table_comment cols=50 rows=3 maxlength=500 placeholder="Ваш комментарий"></textarea><br>
+		* - поля обязательные для заполнения<br>
+		<input type=submit value="Заказать музыку к исполнению">
+	</form>
+</div><br>
+<!--END TABLE-->
 </body>
 </html>
