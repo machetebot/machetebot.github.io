@@ -1,4 +1,14 @@
-<!DOCTYPE html><html><head><title>Radio Player - radio player </title><meta charset="UTF-8"><meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=2.0, minimal-ui, shrink-to-fit=no"></head><body style="text-align:center; margin:10px 0px 0px 0px;"><!--PLAYER - Блок расположения плеера. Плееры: default, lite, energy или custom (свой плеер) (можно несколько) --><div id="my_player" class="my_player" data-player="energy" data-skin="blue" data-width=200 data-autoplay=1 data-volume=100 data-streamurl="https://myradio24.org/75176"></div><!--END PLAYER--><!--Этот скрипт должен располагаться в самом низу после всех блоков и не должен повторяться на странице. --><script src="//myradio24.com/player/player.js?v3.20" data-port="75176" data-interval=15></script><script>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Radio Player - radio player </title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=2.0, minimal-ui, shrink-to-fit=no">
+</head>
+<body style="text-align:center; margin:10px 0px 0px 0px;">
+<!--PLAYER - Блок расположения плеера. Плееры: default, lite, energy или custom (свой плеер) (можно несколько) --><div id="my_player" class="my_player" data-player="energy" data-skin="blue" data-width=200 data-autoplay=1 data-volume=100 data-streamurl="https://myradio24.org/75176"></div><!--END PLAYER-->
+<!--Этот скрипт должен располагаться в самом низу после всех блоков и не должен повторяться на странице. --><script src="//myradio24.com/player/player.js?v3.20" data-port="75176" data-interval=15></script>
+<script>
 var curtitle=document.title; var pos=-20;
 window.setInterval(
 	function() {
@@ -6,4 +16,16 @@ window.setInterval(
 		var n=pos; if(n<0) n=0; var sub=curtitle.substr(n); pos++; if(!sub) {pos=-20; sub=curtitle;} if(n>=0) document.title=sub; 
 	}
 ,400);
-</script></body></html>
+</script>
+
+<!--INFOS - Информация о радио -->
+<div data-myinfo="logo" style="width:300px; height:80px; background-size:cover;"></div>
+<div data-myinfo="img" style="width:300px; height:300px; background-size:cover;"></div>
+<br>
+<b data-myinfo="song"></b><br>
+<br>
+🎧 <b data-myinfo="listeners"></b> <span data-myinfo="isonline"></span> - <span data-myinfo="kbps"></span> kbps
+<a href="https://myradio24.org/75176.m3u" target="_blank"><img src="https://myradio24.com/img/wmp.gif" title="Слушать радио в плеере" /></a>
+<a href="https://myradio24.com/en/player/75176" onclick="window.open(this.href,'player','width=300,height=30'); return false;"><img src="https://myradio24.com/img/open.gif" title="Слушать радио в новом окне"/></a>
+</body>
+</html>
