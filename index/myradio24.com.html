@@ -8,16 +8,233 @@
 
  
 <!--PLAYER - Блок расположения плеера. Плееры: default, lite, energy или custom (свой плеер) (можно несколько) -->
-<div id="my_player" class="my_player" data-player="energy" data-skin="blue" data-width=200 data-autoplay=1 data-volume=90 data-streamurl="http://usa14.fastcast4u.com:5252/live"></div>
+<div id="my_player" class="my_player" data-player="energy" data-skin="blue" data-width=200 data-autoplay=1 data-volume=70 data-streamurl="https://myradio24.org/75176"></div>
 <!--END PLAYER-->
+
+<!--VISUALIZER - Блок расположения визуализации. Цвета: rgb, red, blue или green  (можно несколько) -->
+<canvas class="my_visualizer" width=320 height=128 data-size=64 data-revert=0 data-color="rgb"></canvas>
+<!--END VISUALIZER-->
 
 <!--INFOS - Информация о радио -->
 <div data-myinfo="logo" style="width:300px; height:80px; background-size:cover;"></div>
 <div data-myinfo="img" style="width:300px; height:300px; background-size:cover;"></div>
 <br>
- 
+<b data-myinfo="song"></b><br>
+<br>
+🎧 <b data-myinfo="listeners"></b> <span data-myinfo="isonline"></span> - <span data-myinfo="kbps"></span> kbps
+<a href="https://myradio24.org/75176.m3u" target="_blank"><img src="https://myradio24.com/img/wmp.gif" title="Слушать радио в плеере" /></a>
+<a href="https://myradio24.com/ru/player/75176" onclick="window.open(this.href,'player','width=300,height=30'); return false;"><img src="https://myradio24.com/img/open.gif" title="Слушать радио в новом окне"/></a>
+<br>
+<b data-myinfo="streamname"></b><br>
+<div data-myinfo="htmlavatar"></div>
+<a href="#" target="_blank" data-myinfo="url"></a><br>
+<br><br>
+<!--END INFOS-->
+
+<!--RANKS -->
+<b>Статистика наших ведущих</b><br><br>
+<div data-myinfo="htmlrank"></div>
+<br><br>
+<!--END RANKS-->
+
+<!--SONGS -->
+<b>Последние песни</b><br><br>
+<div class="my_lastsongs" data-revert=1 style="display:inline-block; max-width:500px;">
+	<div class="my_lastsonghtml" style="display:none;">
+		<div style="display: flex; gap:8px; align-items: center; text-align:left; margin:3px;">
+			<img class="my_lastsong_cover" style="width:45px; height:45px; border-radius:4px; vertical-align:middle;">
+			<span>%songtime%</span>
+			<a href="https://www.youtube.com/results?search_query=%songencode%" target="_blank" title="Найти на YouTube">%song%</a> 
+			<span class='vm_postLikes vm_likes vm_like_318761878_%songid%' data-likeid='318761878_%songid%'></span>
+		</div>
+	</div>
+</div>
+<br><br>
+<!--END SONGS-->
+
+<!--CHAT - Блок расположения чата. -->
+<div id="my_chat" data-height=200></div>
+<!--END CHAT-->
+
+<!--TABLE - Блок расположения стола заказов. -->
+<b>Стол заказов</b> (в очереди <b class=my_table_turn>0</b>)<br><br>
+<div id=my_table_off>Сейчас заказы не принимаются.</div>
+<div id=my_table_auto style="display:none;">
+	<form action="https://myradio24.com/ru/table/75176" method="post" target="_blank"><input type=submit value="Заказать музыку к исполнению"></form>
+</div>
+<div id=my_table_on style="display:none;">
+	<form id=my_table_form action="" method=post accept-charset="UTF-8">	
+		<input type=text id=my_table_from maxlength=30 value="" placeholder="От кого*">
+		<input type=text id=my_table_for maxlength=30 value="" placeholder="Для кого">
+		<br>
+		<input type=text id=my_table_artist maxlength=50 value="" placeholder="Исполнитель*">
+		<input type=text id=my_table_song maxlength=50 value="" placeholder="Название трека*">
+		<br>
+		<textarea id=my_table_comment cols=50 rows=3 maxlength=500 placeholder="Ваш комментарий"></textarea><br>
+		* - поля обязательные для заполнения<br>
+		<input type=submit value="Заказать музыку к исполнению">
+	</form>
+</div><br>
+<!--END TABLE-->
+
+
+<!--TABLE2 - ЭКСПЕРИМЕНТАЛЬНАЯ расширенная версия стола заказов -->
+
+<style>
+/* Стиль при наведении на трек */
+.my_table_song:hover { background-color:#f0f0f0; border-radius:8px;}
+.darktheme .my_table_song:hover { background-color:#202020; border-radius:8px; }
+</style>
+
+<h2>Стол заказов</h2>
+
+<div id=my_table_off style='display:none; text-align:center;'>Сейчас заказы не принимаются, попробуйте позже.</div>
+
+<form id=my_table_form action='' method=post accept-charset="UTF-8" style="display:none;">
+	<input type=hidden name=act value='table_order'>
+	<input type=hidden id=my_table_fileid name=fileid>
+	<input type=text id=my_table_from maxlength=30 required value='' placeholder='От кого*' style='width:49%;'>
+	<input type=text id=my_table_for maxlength=30 value='' placeholder='Для кого' style='width:49%;'><br>
+	<input type=text id=my_table_artist maxlength=50 required value='' placeholder='Исполнитель*' style='width:49%;'>
+	<input type=text id=my_table_song maxlength=50 required value='' placeholder='Название трека*' style='width:49%;'><br>
+	<textarea id=my_table_comment rows=2 maxlength=500 placeholder='Ваш комментарий' style='width:100%;' class='vm_imTextarea vm_uploadTextarea'></textarea><br>
+	<input type=submit value='Заказать музыку к исполнению на радио' style='width:100%;'>
+</form>
+<br>
+
+<b>Ваши заказы</b><br><br>
+
+Ваш заказ в очереди <b class=my_table_waiting></b>. Всего в очереди <b class=my_table_turn>0</b>.<br><br>
+
+<!-- Order HTML template -->
+<div id='my_table_order_html' style='display:none;'>
+	<div class='my_table_order' style='display: flex; align-items: center; gap: 12px; padding:8px 0;'>
+			<div class='my_table_order_statushtml'></div>
+			<div style='flex:1;'>
+				<b class='my_table_order_song'></b><br>
+				От: <span class='my_table_order_from'></span> &nbsp; 
+				Для: <span class='my_table_order_for'></span><br>
+				<div class='my_table_order_comment'></div>
+			</div>
+	</div>
+</div>
+
+<div id=my_table_orders></div><br>
+
+<form id=my_table_search_form action='' method=post onsubmit='return $.table_search(this.search.value);' style='display:none;'>
+	<input id=my_table_search_input type=text name=search size=30 placeholder='Исполнитель или название' value=''> 
+	<input type=submit value='Поиск'>
+</form><br>
+<div id=my_table_abc></div>
+<br>
+
+
+<div id=my_table_random style='display:none;'><b>Случайные результаты</b> - для заказа нажмите на трек</div>
+<div id=my_table_search style='display:none;'><b>Результаты поиска</b> - для заказа нажмите на трек</div>
+<br>
+
+<!-- Song HTML template -->
+<div id='my_table_song_html' style='display:none;'>
+	<div class='my_table_song' style='display: flex; align-items: center; gap: 12px; padding:5px 5px; cursor:pointer;'>
+		<img class='my_table_song_cover' width=45 height=45 style='border-radius:4px;' onmouseover='$.table_cover(this,1);' onmouseout='$.table_cover(this,0);'>
+		<div class='my_table_song_length'></div>
+		<div style='flex:1;'>
+			<b class='my_table_song_artist'></b>
+			<div class='my_table_song_title'></div>
+		</div>
+	</div>
+</div>
+
+<div id=my_table_songs></div>
+<br>
+
+<div id=my_table_cover style='position:fixed; bottom:0px; margin-left:58px;'></div>
+
+<!--END TABLE2-->
+
+<!--JS - Функция для детальной настройки обновляемой информации. -->
+<script>
+var my_init_updateinfo=function(info) {
+	//функция расширения полей трека на артиста и название
+	function expand_song(song) {
+		var pos=song.song.indexOf(' - ')
+		var offset=0; if(pos>0) offset=pos+3;
+		song.artist=song.song.substr(0,pos);
+		song.songtitle=song.song.substr(offset);
+	}
+	//ОТОБРАЗИМ стол заказов, если включен (иначе скроем)
+	if($("#my_table_on").length) {
+		if(info.enabletable==3) {info.enabletable=2; if(info.live) info.enabletable=1;}
+		$("#my_table_turn, .my_table_turn").html(info.turntable);
+		$("#my_table_off").css('display', (info.enabletable==0?"block":"none") );	
+		$("#my_table_on").css('display', (info.enabletable==1?"block":"none") );	
+		$("#my_table_auto").css('display', (info.enabletable==2?"block":"none") );
+	}
+	//ОБНОВИМ информационные блоки
+	info.listeners=info.listeners?info.listeners:"";
+	info.isonline="<font color=red>оффлайн</font>"; 
+	if(info.online==1) info.isonline="<font color=green>онлайн</font>"; 
+	//получим новый трек в зависимости от формата array/object и расширим его артистом и названием
+	var tmp=info.nextsongs[0]; if(typeof tmp === 'string') info.nextsongs[0]={song:tmp};
+	expand_song(info.nextsongs[0]); //расширение
+	var next=info.nextsongs[0];
+	//назначение
+	info.nextsong=next.song;
+	info.htmllisteners=info.listeners?"&#127911; "+info.listeners:"";
+	info.htmlimg="<img src='https://myradio24.com/"+info.img+"' width=300 border=0>";
+	info.htmllogo=""; if(info.logo) info.htmllogo="<img src='https://myradio24.com/"+info.logo+"'>";
+	info.htmlavatar=""; if(window.my_avatars && Array.isArray(my_avatars)) { if(my_avatars[info.djname]) info.htmlavatar=my_avatars[info.djname]; else if(my_avatars['']) info.htmlavatar=my_avatars['']; }
+	//рейтинг ведущих
+	var ranks=info.rank; var htmlranks="";
+	if(ranks && ranks.length>0) {
+		ranks.sort(function(a,b) {return b[1]-a[1];}); 
+		for(var i=0;i<ranks.length;i++) {
+			//данные ведущего в зависимости от формата array/object
+			var rank=ranks[i]; if(Array.isArray(rank)) rank={djname:rank[0], rating:rank[1], hours:rank[2], count:rank[3], avatar:rank[4]};
+			htmlranks+="<div style='display:inline-block; margin:5px;'><div style='float:left; width:100px; height:100px;  border:1px solid #ccc; border-radius:50px; background:url(https://myradio24.com/"+rank.avatar+"); background-size:cover;'></div>";
+			htmlranks+="<div style='float:left; padding:15px 0 0 10px; text-align:left; width:110px;'><b>"+rank.djname+"</b><br>"+rank.count+" вещаний<br>"+rank.hours+" часов<br>"+rank.rating+" рейтинг</div></div>";
+		}    
+	}
+	else htmlrank="Ничего не найдено.";
+	info.htmlrank=htmlrank;
+	//последние песни
+	var songs=info.songs; var htmlsongs=""; 
+	//console.dir(songs);
+	if(songs && songs.length>0) {
+		for(var i=0;i<songs.length;i++) {
+			//данные трека в зависимости от формата array/object и расширим полями artist и songtitle
+			if(Array.isArray(songs[i])) songs[i]={time:songs[i][0], song:songs[i][1], img:songs[i][2], songid:songs[i][3]};
+			expand_song(songs[i]); //расширение
+			var song=songs[i]; 				
+			htmlsongs="<tr><td><div style='text-align:left; padding:4px;'>"+song.time.substr(0,5)+" - <a href='https://www.youtube.com/results?search_query="+encodeURIComponent(song.song)+"' target=_blank title='Найти на YouTube'>"+song.song+"</a> </td></tr>"+htmlsongs;
+		} 
+	htmlsongs="<table class='my_radio_width'>"+htmlsongs+"</table>";
+	}
+	else htmlsongs="Ничего не найдено.";
+	info.htmlsongs=htmlsongs;
+	//вставка переменных в data-myinfo
+	$('[data-myinfo]').each(function() {
+		var key=$(this).data('myinfo');
+		if(key && info[key]) {
+			if(key=='img') $(this).css('background-image','url('+info[key]+')');
+			else $(this).html(info[key]); 
+		}
+	});
+	//произведем замену переменных и выведем содержимое информера
+	var objs=document.querySelectorAll(".my_info"); if(!objs.length) return; 
+	if(!window.my_infohtml) my_infohtml={}; 
+	for(var k=0;k<objs.length; k++) {
+		if(!my_infohtml[k]) {my_infohtml[k]=objs[k].innerHTML; objs[k].style.visibility="visible";}
+		var html=my_infohtml[k];
+		for(var i in info) {html=html.replace(new RegExp("%"+i+"%","g"),info[i]);}
+		objs[k].innerHTML=html;
+	}
+}
+</script>
+<!--END JS-->
+
 <!--Этот скрипт должен располагаться в самом низу после всех блоков и не должен повторяться на странице. -->
-<script src="https://myradio24.com/player/player.js?v3.27" data-port="" data-interval=15 data-vmid=0></script>
+<script src="https://myradio24.com/player/player.js?v3.27" data-port="75176" data-interval=15 data-vmid=0></script>
 
 <body>
 </html>
