@@ -1,0 +1,9 @@
+<!DOCTYPE html><html><head><title>Radio Player - radio player </title><meta charset="UTF-8"><meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=2.0, minimal-ui, shrink-to-fit=no"></head><body style="text-align:center; margin:10px 0px 0px 0px;"><!--PLAYER - Блок расположения плеера. Плееры: default, lite, energy или custom (свой плеер) (можно несколько) --><div id="my_player" class="my_player" data-player="energy" data-skin="blue" data-width=200 data-autoplay=1 data-volume=70 data-streamurl="https://myradio24.org/75176"></div><!--END PLAYER--><!--Этот скрипт должен располагаться в самом низу после всех блоков и не должен повторяться на странице. --><script src="//myradio24.com/player/player.js?v3.20" data-port="75176" data-interval=15></script><script>
+var curtitle=document.title; var pos=-20;
+window.setInterval(
+	function() {
+		curtitle=$('.my_marquee').html();
+		var n=pos; if(n<0) n=0; var sub=curtitle.substr(n); pos++; if(!sub) {pos=-20; sub=curtitle;} if(n>=0) document.title=sub; 
+	}
+,400);
+</script></body></html>
