@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<playlist>
+  <trackList>
+	<track>
+		<annotation>Cold - Quiet Now</annotation>
+        	<location>https://cdn.jsdelivr.net/gh/machetebot/Rockoustic@main/Rock/Cold%20-%20Quiet%20Now.mp3</location>
+       		<image/>
+	</track>
+	<track>
+		<annotation>Immaculate Fools - Girl</annotation>
+      		<location>http://k003.kiwi6.com/hotlink/6yid2549wy/Immaculate_Fools_-_Girl.mp3</location>
+		<image/>
+	</track>
+	<track>
+		<annotation>Goo Goo Dolls - Iris</annotation>
+        	<location>http://k003.kiwi6.com/hotlink/g0b3yg690a/Goo_Goo_Dolls_-_Iris.mp3</location>
+       		<image/>
+    	</track>
+	<track>
+		<annotation>Binocular - Deep</annotation>
+        	<location>http://k003.kiwi6.com/hotlink/fpmp0hx3hv/Binocular_-_Deep.mp3</location>
+       		<image/>
+    	</track>
+</trackList>
+</playlist>
