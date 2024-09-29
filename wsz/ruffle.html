@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset='utf8'>
+    </head>
+    <body>
+        <div id='ruffle'></div>
+        <script src='https://unpkg.com/@ruffle-rs/ruffle'></script>
+        <script>
+var swfobject = {};
+
+swfobject.embedSWF = function(url, cont, width, height){
+    var ruffle = window.RufflePlayer.newest(),
+        player = Object.assign(document.getElementById(cont).appendChild(ruffle.createPlayer()), {
+            width: width,
+            height: height,
+            style: 'width: ' + width + 'px; height: ' + height + 'px',
+        });
+    
+    player.load({ url: url });
+}
+
+swfobject.embedSWF('https://cdn.jsdelivr.net/gh/machetebot/machetebot.github.io@main/wsz/player23z.swf', 'ruffle', 500, 500);
+        </script>
+
+<br>
+
+<embed src="https://cdn.jsdelivr.net/gh/machetebot/machetebot.github.io@main/wsz/playlistplayer.swf" width="180" height="260" allowscriptaccess="always" allowfullscreen="false" flashvars="height=260&width=180&file=https://cdn.jsdelivr.net/gh/machetebot/machetebot.github.io@main/wsz/mp3playlist.xml&backcolor=0x000000&frontcolor=0xffffff&lightcolor=0xff0000&displayheight=100&volume=100&searchbar=false&showicons=false&showeq=true&showdownload=true&thumbsinplaylist=false&autostart=true&autoscroll=true" />
+
+
+<br>
+<embed src="https://cdn.jsdelivr.net/gh/machetebot/machetebot.github.io@main/wsz/player23z.swf" quality="high" menu="true" name="mp3player" bgcolor="1a1a1a" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="config=https://cdn.jsdelivr.net/gh/machetebot/machetebot.github.io@main/wsz/config.xml&amp;file=https://cdn.jsdelivr.net/gh/machetebot/machetebot.github.io@main/wsz/playlist.xml&amp;mywidth=300&amp;myheight=300" width="300" border="0" height="300"> </div></div></font>
+
+
+
+
+    </body>
+</html>
