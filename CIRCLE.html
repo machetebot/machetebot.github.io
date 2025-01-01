@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="viewport" content="interactive-widget=resizes-content"/>        
+    <style>
+#background-wrap {
+            bottom: 0;
+            left: 0;
+            position: fixed;
+            right: 0;
+            top: 0;
+            z-index: -1;
+        }
+
+        }
+        /* KEYFRAMES */
+        @-webkit-keyframes animateBubble {
+            0% {
+                margin-top: 1000px;
+            }
+            100% {
+                margin-top: -100%;
+            }
+        }
+        @-moz-keyframes animateBubble {
+            0% {
+                margin-top: 1000px;
+            }
+            100% {
+                margin-top: -100%;
+            }
+        }
+        @keyframes animateBubble {
+            0% {
+                margin-top: 1000px;
+            }
+            100% {
+                margin-top: -100%;
+            }
+        }
+        @-webkit-keyframes sideWays {
+            0% {
+                margin-left: 0px;
+            }
+            100% {
+                margin-left: 50px;
+            }
+        }
+        @-moz-keyframes sideWays {
+            0% {
+                margin-left: 0px;
+            }
+            100% {
+                margin-left: 50px;
+            }
+        }
+        @keyframes sideWays {
+            0% {
+                margin-left: 0px;
+            }
+            100% {
+                margin-left: 50px;
+            }
+        }
+        /* ANIMATIONS */
+        .x1 {
+            -webkit-animation: animateBubble 25s linear infinite, sideWays 2s ease-in-out infinite alternate;
+            -moz-animation: animateBubble 25s linear infinite, sideWays 2s ease-in-out infinite alternate;
+            animation: animateBubble 25s linear infinite, sideWays 2s ease-in-out infinite alternate;
+            left: -5%;
+            top: 5%;
+            -webkit-transform: scale(0.6);
+            -moz-transform: scale(0.6);
+            transform: scale(0.6);
+        }
+        .x2 {
+            -webkit-animation: animateBubble 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+            -moz-animation: animateBubble 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+            animation: animateBubble 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+            left: 5%;
+            top: 80%;
+            -webkit-transform: scale(0.4);
+            -moz-transform: scale(0.4);
+            transform: scale(0.4);
+        }
+        .x3 {
+            -webkit-animation: animateBubble 28s linear infinite, sideWays 2s ease-in-out infinite alternate;
+            -moz-animation: animateBubble 28s linear infinite, sideWays 2s ease-in-out infinite alternate;
+            animation: animateBubble 28s linear infinite, sideWays 2s ease-in-out infinite alternate;
+            left: 10%;
+            top: 40%;
+            -webkit-transform: scale(0.7);
+            -moz-transform: scale(0.7);
+            transform: scale(0.7);
+        }
+        .x4 {
+            -webkit-animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
+            -moz-animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
+            animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
+            left: 20%;
+            top: 0;
+            -webkit-transform: scale(0.3);
+            -moz-transform: scale(0.3);
+            transform: scale(0.3);
+        }
+        .x5 {
+            -webkit-animation: animateBubble 29s linear infinite, sideWays 4s ease-in-out infinite alternate;
+            -moz-animation: animateBubble 29s linear infinite, sideWays 4s ease-in-out infinite alternate;
+            animation: animateBubble 29s linear infinite, sideWays 4s ease-in-out infinite alternate;
+            left: 30%;
+            top: 50%;
+            -webkit-transform: scale(0.5);
+            -moz-transform: scale(0.5);
+            transform: scale(0.5);
+        }
+        .x6 {
+            -webkit-animation: animateBubble 21s linear infinite, sideWays 2s ease-in-out infinite alternate;
+            -moz-animation: animateBubble 21s linear infinite, sideWays 2s ease-in-out infinite alternate;
+            animation: animateBubble 21s linear infinite, sideWays 2s ease-in-out infinite alternate;
+            left: 50%;
+            top: 0;
+            -webkit-transform: scale(0.8);
+            -moz-transform: scale(0.8);
+            transform: scale(0.8);
+        }
+        .x7 {
+            -webkit-animation: animateBubble 20s linear infinite, sideWays 2s ease-in-out infinite alternate;
+            -moz-animation: animateBubble 20s linear infinite, sideWays 2s ease-in-out infinite alternate;
+            animation: animateBubble 20s linear infinite, sideWays 2s ease-in-out infinite alternate;
+            left: 65%;
+            top: 70%;
+            -webkit-transform: scale(0.4);
+            -moz-transform: scale(0.4);
+            transform: scale(0.4);
+        }
+        .x8 {
+            -webkit-animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
+            -moz-animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
+            animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
+            left: 80%;
+            top: 10%;
+            -webkit-transform: scale(0.3);
+            -moz-transform: scale(0.3);
+            transform: scale(0.3);
+        }
+        .x9 {
+            -webkit-animation: animateBubble 29s linear infinite, sideWays 4s ease-in-out infinite alternate;
+            -moz-animation: animateBubble 29s linear infinite, sideWays 4s ease-in-out infinite alternate;
+            animation: animateBubble 29s linear infinite, sideWays 4s ease-in-out infinite alternate;
+            left: 90%;
+            top: 50%;
+            -webkit-transform: scale(0.6);
+            -moz-transform: scale(0.6);
+            transform: scale(0.6);
+        }
+        .x10 {
+            -webkit-animation: animateBubble 26s linear infinite, sideWays 2s ease-in-out infinite alternate;
+            -moz-animation: animateBubble 26s linear infinite, sideWays 2s ease-in-out infinite alternate;
+            animation: animateBubble 26s linear infinite, sideWays 2s ease-in-out infinite alternate;
+            left: 80%;
+            top: 80%;
+            -webkit-transform: scale(0.3);
+            -moz-transform: scale(0.3);
+            transform: scale(0.3);
+        }
+        /* OBJECTS */
+        .bubble {
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            -webkit-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2), inset 0px 10px 30px 5px rgba(255, 255, 255, 1);
+            -moz-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2), inset 0px 10px 30px 5px rgba(255, 255, 255, 1);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2), inset 0px 10px 30px 5px rgba(255, 255, 255, 1);
+            height: 200px;
+            position: absolute;
+            width: 200px;
+        }
+            .bubble:after {
+                /*background: -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 70%);*/ /* FF3.6+ */
+                /*background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(255,255,255,0.5)), color-stop(70%,rgba(255,255,255,0)));*/ /* Chrome,Safari4+ */
+                /*background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,0.5) 0%,rgba(255,255,255,0) 70%);*/ /* Chrome10+,Safari5.1+ */
+                /*background: -o-radial-gradient(center, ellipse cover, rgba(255,255,255,0.5) 0%,rgba(255,255,255,0) 70%);*/ /* Opera 12+ */
+                /*background: -ms-radial-gradient(center, ellipse cover, rgba(255,255,255,0.5) 0%,rgba(255,255,255,0) 70%);*/ /* IE10+ */
+                background: radial-gradient(ellipse at center, rgba(255,255,255,0.5) 0%,rgba(255,255,255,0) 70%); /* W3C */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                border-radius: 50%;
+                -webkit-box-shadow: inset 0 20px 30px rgba(255, 255, 255, 0.3);
+                -moz-box-shadow: inset 0 20px 30px rgba(255, 255, 255, 0.3);
+                box-shadow: inset 0 20px 30px rgba(255, 255, 255, 0.3);
+                content: "";
+                height: 180px;
+                left: 10px;
+                position: absolute;
+                width: 180px;
+            }
+        label {
+            color: white
+        }
+
+         /* width */
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+ 
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #ff0066; 
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555; 
+        }
+        :root {
+            --light-blue: #8C6F58;
+            --dark-blue: #203B88;
+            --violet: #28BCC9;
+  
+            --background-left: #BD2272;
+            --background-right: #17276D;
+  
+            --conic-gradient: conic-gradient(
+                                            var(--dark-blue), 
+                                            var(--violet), 
+                                            var(--light-blue),
+                                            var(--dark-blue)
+  );
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+  
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes pulse {
+            from, 20%, 40%, 80%, to {
+                transform: scale(1);
+            }
+  
+            10%, 60% {
+                transform: scale(1.1);
+            }
+        }
+
+        body {
+            background: linear-gradient(
+                                       to right, 
+                                       var(--background-left), 
+                                       var(--background-right)
+  );
+            height: 100vh;
+            margin: 0px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 0px;
+        }
+
+        #background {
+            display: grid;
+            inset: 0px;  
+            place-items: center;
+            position: fixed;
+            z-index: 1;
+        }
+
+        #circle {
+            animation: rotate 10s linear infinite;
+            background: var(--conic-gradient);
+            border-radius: 70vh;
+            display: grid;
+            filter: blur(1.5vh);
+            height: 90vh;
+            place-items: center;
+            position: relative;
+            width: 70vh;
+        }
+
+        #circle-inner {
+            border-radius: inherit;
+            inset: 5%;
+            position: absolute;
+        }
+
+        #circle-glow {
+            animation: pulse 10s ease-in-out infinite;
+            background: var(--conic-gradient);
+            border-radius: 100vh;
+            filter: blur(3vh);
+            height: 120%;
+            opacity: 0.25;
+            width: 120%;
+            z-index: 2;
+        }
+
+        #circle-inner {
+            background: linear-gradient(
+                                       to right, 
+                                       var(--background-left), 
+                                       var(--background-right)
+  );
+            z-index: 3;
+        }
+
+        #app {
+            display: grid;
+            height: 100vh;
+            place-items: center;
+            position: relative;
+            width: 100vw;
+            z-index: 2;
+        }
+
+        #nav {
+            align-items: center;
+            display: flex;
+            height: 100%;
+            left: 0px;
+            position: fixed;
+            top: 0px;
+            width: 120px;
+        }
+
+        #nav-items {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 120px;
+        }
+
+        #nav-items > .nav-item {
+            border-radius: 6px;
+            cursor: pointer;
+            display: grid;
+            height: 100px;
+            place-items: center;
+            transition: background-color 250ms;
+            width: 100px;
+        }
+
+        #nav-items > .nav-item:hover {
+            background-color: rgba(255, 255, 255, 0.04);
+        }
+
+        #nav-items > .nav-item:hover > i {
+            color: rgba(255, 255, 255, 0.9); 
+        }
+
+        #nav-items > .nav-item > i {
+            color: rgba(255, 255, 255, 0.4); 
+            font-size: 2.5em;
+            transition: color 250ms;
+        }
+
+        #profiles {
+            display: flex;
+            flex-wrap: wrap;
+            gap: clamp(10px, 0.8vw, 20px);
+            justify-content: center;
+            margin-left: 80px;
+            width: clamp(600px, 80vw, 1400px);
+        }
+
+        #profiles > .profile {
+            aspect-ratio: 7 / 8;
+            backdrop-filter: blur(0.75vw);
+            background-color: rgba(255, 255, 255, 0.06);
+            border-radius: 1vw;
+            cursor: pointer;
+            transition: background-color 250ms;
+            width: calc(25% - clamp(10px, 0.8vw, 20px));
+        }
+
+        #profiles > .profile:hover {
+            backdrop-filter: blur(1vw);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .profile > .profile-content {
+            align-items: center;
+            display: flex;
+            flex-wrap: wrap;
+            height: calc(100% - clamp(8px, 1vw, 12px));
+            justify-content: center;
+            padding: clamp(8px, 1vw, 12px);
+        }
+
+        .profile > .profile-content > .profile-pic {
+            aspect-ratio: 1;
+            border: clamp(3px, 0.4vw, 5px) solid white;
+            border-radius: 100%;
+            flex-shrink: 0;
+            height: 70%;
+            position: relative;
+        }
+
+        .profile > .profile-content > .profile-pic > .profile-pic-image {
+            background-color: rgba(255, 255, 255, 0.06);
+            border-radius: 100%;
+            height: calc(100% - clamp(10px, 1.5vw, 20px));
+            margin: clamp(5px, 0.75vw, 10px);
+            object-fit: cover;
+            width: calc(100% - clamp(10px, 1.5vw, 20px));
+        }
+
+        .profile > .profile-content > .profile-name {
+            color: white;
+            font-family: 'Rubik', sans-serif;
+            font-size: clamp(1em, 2vw, 2em);
+            margin: 0px;
+            text-align: center;
+        }
+
+        @media(max-width: 1200px), (max-height: 900px) { 
+            #nav {
+                width: 80px;
+            }
+
+            #nav-items {
+                gap: 5px;
+                width: 80px;
+            }
+
+            #nav-items > .nav-item {
+                border-radius: 6px;
+                height: 60px;
+                width: 60px;
+            }
+
+            #nav-items > .nav-item > i {
+                font-size: 1.5em;
+            }
+        }
+
+        /* -- YouTube Link Styles -- */
+
+        #youtube-link {
+            bottom: 10px;
+        }
+
+        #youtube-link > i {
+            color: rgb(239, 83, 80);
+        }
+
+        .link {
+            align-items: center;
+            backdrop-filter: blur(3px);
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+            cursor: pointer;  
+            display: inline-flex;
+            gap: 5px;
+            left: 10px;
+            padding: 10px 20px;
+            position: fixed;
+            text-decoration: none;
+            z-index: 100;
+        }
+
+        .link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .link > i, .link > span {
+            height: 20px;
+            line-height: 20px;
+        }
+
+        .link > span {
+            color: white;
+            font-family: "Rubik", sans-serif;
+        }
+        .content { 
+            background-color: orange;
+            background: linear-gradient(270deg,#BD2272,#17276D);
+            border-radius: .25em;
+            box-shadow: 0 0 .55em #000000;
+            box-shadow: 0 0 .55em rgba(0,0,0,.75);
+            box-sizing: border-box;
+            left: 50%;
+            padding: 8px;
+            position: fixed;
+            text-align: center;
+            top: 50%;
+            transform: translate(-50%, -50%);
+         /*   max-width: 1040px !important;
+            height: auto ;
+            width: 100% !important;
+            max-height: 600px !important;*/
+            -webkit-animation-delay: 1s;
+            -moz-animation-delay: 1s;
+            -ms-animation-delay: 1s;
+            -o-animation-delay: 1s;
+        }
+
+        .pic, img, picture{
+            -webkit-animation-delay: 2s;
+            -moz-animation-delay: 2s;
+            -ms-animation-delay: 2s;
+            -o-animation-delay: 2s;
+            max-width: 1024px;
+            height: auto;
+            width: 100% !important;
+            
+        }
+
+        @media only screen and (min-height: 600px) {
+            .content {
+                max-width: 100% !important;
+                height: auto ;
+                width: 100% !important;
+                max-height: 700px !important;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"/>
+</head>
+<body class="animated fadeIn slow">
+            <div id="background-wrap">
+                <div class="bubble x1"></div>
+                <div class="bubble x2"></div>
+                <div class="bubble x3"></div>
+                <div class="bubble x4"></div>
+                <div class="bubble x5"></div>
+                <div class="bubble x6"></div>
+                <div class="bubble x7"></div>
+                <div class="bubble x8"></div>
+                <div class="bubble x9"></div>
+                <div class="bubble x10"></div>
+            </div>
+    <div id="background">
+    <div id="circle">
+    <div id="circle-glow"></div>
+    <div id="circle-inner"></div>
+    </div>
+<div class="content">
+<center> <style type="text/css"> 
+#outerdiv{width:777px;height:600px;overflow:hidden;position:relative;}#inneriframe{position:absolute;top:0px;left:-112px;width:777px;height:600px;}
+</style>
+<div id="outerdiv">
+<iframe id="inneriframe" scrolling="no"
+<iframe frameborder="0" scrolling="no" style="height:600px;width:996px;border:none;" src='https:/machetebot.github.io/'></iframe>
+</div></center>
+</div>
+</body>
+</html>
