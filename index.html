@@ -49,35 +49,163 @@
     <script type="text/javascript" src="/metrika.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800andamp;subset=latin,latin-ext" rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.8.2.js"></script>
-    <style type="text/css">#overlay{position:fixed;top:0;left:0;width:100%;height:100%;background-color:#000;-moz-opacity:.7;-khtml-opacity:.7;opacity:.7;z-index:100;display:none}.zharlzzzz a{text-decoration:none}.popup{width:100%;margin:0 auto;display:none;position:fixed;z-index:101}.zharlzzzz{min-width:200px;width:200px;min-height:150px;margin:100px auto;background: linear-gradient(270deg, #BD2272, #17276D 100%);position:relative;z-index:103;padding:15px 35px;border-radius:5px;box-shadow:0 2px 5px #000}.zharlzzzz p{clear:both;color:#555;font-size:20px;font-family:Source Sans Pro}.zharlzzzz p a{color:#d91900;font-weight:700}.zharlzzzz .x{float:right;height:35px;left:22px;position:relative;top:-25px;width:34px}.zharlzzzz .x:hover{cursor:pointer}</style>
-    <style>
-      .animated-rainbow {
-      font-size: 12px;
-      font-family: Arial Black, Gadget, sans-serif;
-      background: linear-gradient(to left, #f00, #ff2b00, #f50, #ff8000, #fa0, #ffd500, #ff0, #d4ff00, #af0, #80ff00, #5f0, #2bff00, #0f0, #00ff2a, #0f5, #00ff80, #0fa, #00ffd5, #0ff, #00d5ff, #0af, #0080ff, #05f, #002aff, #00f, #2b00ff, #50f, #8000ff, #a0f, #d400ff, #f0f, #ff00d4, #f0a, #ff0080, #f05, #ff002b, #f00);
-      animation: rainbow-move-left-right 5s linear infinite alternate;
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      }
-      @keyframes rainbow-move-left-right {
-      0% {background-position: 0 0    }
-      100% {background-position: -500px 0}
-      }
-      #zharlzzz1 {
-            max-width: 100%;
-            height: auto;
-            animation: neon1 0.5s ease-in-out infinite alternate;
-        }
-        @keyframes neon1 {
-            from {
-                -webkit-filter: drop-shadow(0px 0px 3px rgb(0, 0, 0));
-            }
-            to {
-                -webkit-filter: drop-shadow(0px 0px 8px rgb(189, 34, 114));
-            }
-        }
-    </style>
+<style>
+   #overlay {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: #000;
+   -moz-opacity: 0.7;
+   -khtml-opacity: 0.7;
+   opacity: 0.7;
+   z-index: 100;
+   display: none;
+}
+.zharlzzzz a {
+   text-decoration: none;
+}
+.popup {
+   width: 100%;
+   margin: 0 auto;
+   display: none;
+   position: fixed;
+   z-index: 101;
+}
+.zharlzzzz {
+   min-width: 200px;
+   width: 200px;
+   min-height: 150px;
+   margin: 100px auto;
+   background: linear-gradient(270deg, #bd2272, #17276d 100%);
+   position: relative;
+   z-index: 103;
+   padding: 15px 35px;
+   border-radius: 5px;
+   box-shadow: 0 2px 5px #000;
+}
+.zharlzzzz p {
+   clear: both;
+   color: #555;
+   font-size: 20px;
+   font-family: Source Sans Pro;
+}
+.zharlzzzz p a {
+   color: #d91900;
+   font-weight: 700;
+}
+.zharlzzzz .x {
+   float: right;
+   height: 35px;
+   left: 22px;
+   position: relative;
+   top: -25px;
+   width: 34px;
+}
+.zharlzzzz .x:hover {
+   cursor: pointer;
+}
+.animated-rainbow {
+   font-size: 12px;
+   font-family: Arial Black, Gadget, sans-serif;
+   background: linear-gradient(
+      to left,
+      #f00,
+      #ff2b00,
+      #f50,
+      #ff8000,
+      #fa0,
+      #ffd500,
+      #ff0,
+      #d4ff00,
+      #af0,
+      #80ff00,
+      #5f0,
+      #2bff00,
+      #0f0,
+      #00ff2a,
+      #0f5,
+      #00ff80,
+      #0fa,
+      #00ffd5,
+      #0ff,
+      #00d5ff,
+      #0af,
+      #0080ff,
+      #05f,
+      #002aff,
+      #00f,
+      #2b00ff,
+      #50f,
+      #8000ff,
+      #a0f,
+      #d400ff,
+      #f0f,
+      #ff00d4,
+      #f0a,
+      #ff0080,
+      #f05,
+      #ff002b,
+      #f00
+   );
+   animation: rainbow-move-left-right 5s linear infinite alternate;
+   -webkit-background-clip: text;
+   background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+@keyframes rainbow-move-left-right {
+   0% {
+      background-position: 0 0;
+   }
+   100% {
+      background-position: -500px 0;
+   }
+}
+#zharlzzz1 {
+   max-width: 100%;
+   height: auto;
+   animation: neon1 0.5s ease-in-out infinite alternate;
+}
+@keyframes neon1 {
+   from {
+      -webkit-filter: drop-shadow(0px 0px 3px rgb(0, 0, 0));
+   }
+   to {
+      -webkit-filter: drop-shadow(0px 0px 8px rgb(189, 34, 114));
+   }
+}
+.image {
+   width: 60px;
+   height: 60px;
+   -webkit-animation: spin 2s linear infinite;
+   -moz-animation: spin 2s linear infinite;
+   animation: spin 2s linear infinite;
+   -webkit-filter: drop-shadow(0px 0px 4px rgba(255, 255, 255, 0.8));
+   -webkit-transition: all 0.5s linear;
+   -o-transition: all 0.5s linear;
+   transition: all 0.5s linear;
+}
+.shadowfilter:hover {
+   -webkit-filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.8));
+}
+@-moz-keyframes spin {
+   100% {
+      -moz-transform: rotate(360deg);
+   }
+}
+@-webkit-keyframes spin {
+   100% {
+      -webkit-transform: rotate(360deg);
+   }
+}
+@keyframes spin {
+   100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+   }
+}
+</style>
     <script type="text/javascript">$(function(){var o=$('<div id="overlay"></div>');o.show(),o.appendTo(document.body),$(".popup").show(),$(".close").click(function(){return $(".popup").hide(),o.appendTo(document.body).remove(),!1}),$(".x").click(function(){return $(".popup").hide(),o.appendTo(document.body).remove(),!1})})</script>
     <script type="application/ld+json">
       {
@@ -143,7 +271,7 @@
     <div class="main">
       <div id="text">
         <p align="center">
-          <img class="shadowfilter" src="https://cdn.jsdelivr.net/gh/machetebot/machetebot.github.io@main/img/gif/sharingganeyes.gif" height="60px"/>
+          <img class="image" src="https://cdn.jsdelivr.net/gh/machetebot/machetebot.github.io@main/img/gif/Sharinganz.png" height="60px"/>
           </p><strong>
         <p align="center" style="font-size:20px;color:#990606;font-family:Source Sans Pro">
           ＣＯＧＩＴＯ, ＥＲＧＯ ＳＵＭ ㋡
@@ -12092,7 +12220,7 @@
       </div>
     </div>
     <div class="miniprofile">
-      <img class="shadowfilter" src="https://i.imgur.com/kziHvf0.gif" style="padding: 5px;position: absolute;z-index: 3;" width="50" height="50">
+      <img id="zharlzzz1" src="https://i.imgur.com/kziHvf0.gif" style="padding: 5px;position: absolute;z-index: 3;" width="50" height="50">
       <div class="text">
         <div style="padding-left: 68px;padding-top: 1px;line-height: 14px;">
           <strong>Name:</strong>
@@ -12105,14 +12233,14 @@
         <div style="margin-top: 0px;padding-left: 5px;">
           <strong>Friends:</strong>
           <br>
-          <marquee behavior="scroll" direction="right" scrollamount="1px" width="100%" height="68px"> <img src="https://i.imgur.com/aEw9fTY.png" height="80px">
-            <img src="https://i.imgur.com/kyrOKqh.png" height="80px">
-            <img src="https://i.imgur.com/Ev8oDA2.png" height="80px">
-            <img src="https://i.imgur.com/Z2Qufvk.png" height="80px">
-            <img src="https://i.imgur.com/H3BzA6f.png" height="80px">
-            <img src="https://i.imgur.com/rCVVIwR.png" height="80px">
-            <img src="https://i.imgur.com/oiu9NMJ.png" height="80px">
-            <img src="https://i.imgur.com/2vbldfH.png" height="80px" width="80px">
+          <marquee behavior="scroll" direction="right" scrollamount="1px" width="100%" height="69px"> <img src="https://i.imgur.com/aEw9fTY.png"      height="80px"/>
+            <img src="https://i.imgur.com/kyrOKqh.png" height="80px"/>
+            <img src="https://i.imgur.com/Ev8oDA2.png" height="80px"/>
+            <img src="https://i.imgur.com/Z2Qufvk.png" height="80px"/>
+            <img src="https://i.imgur.com/H3BzA6f.png"  height="80px"/>
+            <img src="https://i.imgur.com/rCVVIwR.png"  height="80px"/>
+            <img src="https://i.imgur.com/oiu9NMJ.png" height="80px"/>
+            <img src="https://i.imgur.com/2vbldfH.png" height="80px"/>
           </marquee>
         </div>
       </div>
