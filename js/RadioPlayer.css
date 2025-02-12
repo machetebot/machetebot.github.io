@@ -1,0 +1,251 @@
+/*---------------------------------------------------
+    
+    MUSIC PLAYER #01 by glenthemes
+    
+    Initial release: 2017/04/10
+    Major update #1: 2021/08/12
+	Major update #2: 2023/11/23
+    
+    hi there traveller!
+    it's been a tradition of mine to put hidden
+    learning resources here in the comments, so
+    let's continue that :)
+    
+    to build a music player you need javascript
+    as well as html components. css is wherever you
+    want the player to be and how you want it to look!
+    
+    > audio javascript:
+      https://www.w3schools.com/jsref/dom_obj_audio.asp
+    > audio html:
+      https://www.w3schools.com/tags/tag_audio.asp
+    
+---------------------------------------------------*/
+
+@font-face { font-family: "tenon light"; src: url("https://glen-assets.github.io/fonts/tenon-light.ttf"); }
+
+[glenplayer01]{
+	position:fixed;
+	left:0;margin-left:0;
+	transform:translateX(calc(-100% - 3px));
+	transition:transform var(--MusicPlayer-SlideOut-Speed) ease-in-out;
+}
+
+[glenplayer01]:hover {
+	transform:none;
+	transition:transform var(--MusicPlayer-SlideIn-Speed) ease-in-out;
+}
+
+[glenplayer01][position="bottom"]{
+	bottom:0;
+	margin-bottom:var(--MusicPlayer-Screen-Edge-Offset);
+}
+
+[glenplayer01][position="top"]{
+	top:0;
+	margin-top:var(--MusicPlayer-Screen-Edge-Offset);
+}
+
+[glenplayer01][shadow="yes"]{
+	filter:drop-shadow(2px 4px 6px rgba(0,0,0,var(--MusicPlayer-Shadow-Strength)));
+}
+
+[glenplayer01] video, [glenplayer01] audio {
+	display:none!important;
+}
+
+[glenplayer01] .kava {
+	position:relative;
+}
+
+[glenplayer01] .kava:before {
+	content:"";
+	position:absolute;
+	top:0;left:0;
+	margin-top:calc(0px - var(--MusicPlayer-Frame-Thickness));
+	width:calc(100% + var(--MusicPlayer-Frame-Thickness) + var(--MusicPlayer-Circle-Size) + var(--MusicPlayer-Frame-Thickness));
+	height:calc(100% + (var(--MusicPlayer-Frame-Thickness) * 2));
+	background:var(--MusicPlayer-Frame-Color);
+	opacity:calc(100% - var(--MusicPlayer-Frame-Transparency));
+	border-radius:0 var(--MusicPlayer-Circle-Size) var(--MusicPlayer-Circle-Size) 0;
+	z-index:-1;
+}
+
+[glenplayer01] .myrrh {
+	position:relative;
+	margin-left:var(--MusicPlayer-Frame-Thickness);
+}
+
+[glenplayer01] [song-info]{
+	position:relative;
+	padding:var(--MusicPlayer-Text-Padding);
+	text-align:var(--MusicPlayer-Text-Align);
+	line-height:1;
+}
+
+[glenplayer01] [song-info]:before {
+	content:"";
+	position:absolute;
+	top:0;left:0;
+	width:100%;
+	height:100%;
+	background:var(--MusicPlayer-Text-Background);
+	opacity:calc(100% - var(--MusicPlayer-Text-Background-Transparency));
+	z-index:-1
+}
+
+[glenplayer01] [top-text]{
+	font-family:var(--MusicPlayer-Text-TOP-Font);
+	font-size:var(--MusicPlayer-Text-TOP-Size);
+	color:var(--MusicPlayer-Text-TOP-Color);
+	line-height:1;
+}
+
+[glenplayer01] [bottom-text]{
+	font-family:var(--MusicPlayer-Text-BOTTOM-Font);
+	font-size:var(--MusicPlayer-Text-BOTTOM-Size);
+	color:var(--MusicPlayer-Text-BOTTOM-Color);
+	line-height:1;
+}
+
+[glenplayer01] [song-info] > * + * {
+	margin-top:var(--MusicPlayer-Text-Row-Spacing);
+}
+
+[glenplayer01] [uppercase]{
+	letter-spacing:0.5px;
+	text-transform:uppercase;
+}
+
+[glenplayer01] .betony-h {
+	position:absolute;
+	top:0;right:0;
+	margin-right:calc(0px - var(--MusicPlayer-Circle-Size) - var(--MusicPlayer-Frame-Thickness));
+	width:var(--MusicPlayer-Circle-Size);
+	height:100%;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+
+[glenplayer01] .betony {
+	position:relative;
+	width:var(--MusicPlayer-Circle-Size);
+	height:var(--MusicPlayer-Circle-Size);
+	line-height:0;
+}
+
+[glenplayer01] .betony:before {
+	content:"";
+	position:absolute;
+	top:0;left:0;
+	width:100%;
+	height:100%;
+	border-radius:100%;
+	background:var(--MusicPlayer-Circle-Background);
+	opacity:calc(100% - var(--MusicPlayer-Circle-Transparency));
+	z-index:-1;
+}
+
+[glenplayer01] .tarragon,
+[glenplayer01] .hyssop {
+	position:absolute;
+	top:0;left:0;
+	width:100%;
+	height:100%;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	font-family:inherit;
+	background:none;
+	color:transparent;
+	border:none;
+	padding:0;
+	line-height:0;
+	border-radius:100%;
+	cursor:pointer;
+}
+
+[glenplayer01] .btn-paused {
+	display:block;
+	width:0;height:0;
+	margin-left:2px;
+	border-top:calc(var(--MusicPlayer-PlayButton-Size) * 0.6) solid transparent;
+	border-bottom:calc(var(--MusicPlayer-PlayButton-Size) * 0.6) solid transparent;
+	border-left:var(--MusicPlayer-PlayButton-Size) solid var(--MusicPlayer-PlayButton-Color);
+	border-right:none;
+}
+
+[glenplayer01] .btn-playing {
+	display:flex;
+	align-items:flex-end;
+	justify-content:center;
+	gap:var(--MusicPlayer-Bar-Spacing);
+}
+
+[glenplayer01] .btn-playing .vodka {
+	width:var(--MusicPlayer-Bar-Thickness);
+	height:calc(var(--MusicPlayer-Bar-Thickness) * 5);
+	border-radius:var(--MusicPlayer-Bar-Thickness);
+	background:var(--MusicPlayer-Bar-Color);
+	transform-origin:bottom;
+}
+
+/*---- BAR #1 ----*/
+[glenplayer01] .btn-playing .vodka:nth-of-type(1){
+	transform:scaleY(0.4);
+    animation:fiz 1s 0s infinite;
+}
+
+@keyframes fiz {
+    33% {transform:scaleY(0.4)}
+    69% {transform:scaleY(0.8)}
+    85% {transform:scaleY(0.2)}
+}
+
+/*---- BAR #2 ----*/
+[glenplayer01] .btn-playing .vodka:nth-of-type(2){
+    animation:seb 0.8s 0s infinite;
+}
+
+@keyframes seb {
+    25% {transform:scaleY(0.25)}
+    50% {transform:scaleY(0.65)}
+    75% {transform:scaleY(0.4)}
+}
+
+/*---- BAR #3 ----*/
+[glenplayer01] .btn-playing .vodka:nth-of-type(3){
+    transform:scaleY(0.8);
+    animation:troy 1.2s 0s infinite;
+}
+
+@keyframes troy {
+    20% {transform:scaleY(0.5)}
+    42% {transform:scaleY(0.9)}
+    80% {transform:scaleY(0.2)}
+}
+
+/*---- BAR #4 ----*/
+[glenplayer01] .btn-playing .vodka:nth-of-type(4){
+    transform:scaleY(0.8);
+    animation:phor 0.8s 0s infinite;
+}
+
+@keyframes phor {
+    30% {transform:scaleY(0.6)}
+    40% {transform:scaleY(0.8)}
+    65% {transform:scaleY(0.35)}
+}
+
+/*---- BAR #5 ----*/
+[glenplayer01] .btn-playing .vodka:nth-of-type(5){
+    transform:scaleY(0.8);
+    animation:fae 0.69s 0s infinite;
+}
+
+@keyframes fae {
+    25% {transform:scaleY(0.25)}
+    50% {transform:scaleY(0.65)}
+    75% {transform:scaleY(0.4)}
+}
