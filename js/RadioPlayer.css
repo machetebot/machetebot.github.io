@@ -22,7 +22,7 @@
     
 ---------------------------------------------------*/
 
-@font-face { font-family: "tenon light"; src: url("https://glen-assets.github.io/fonts/tenon-light.ttf"); }
+@font-face { font-family: "tenon light"; src: url("https://cdn.jsdelivr.net/gh/machetebot/machetebot.github.io@main/js/tenon-light.ttf"); }
 
 [glenplayer01]{
 	position:fixed;
