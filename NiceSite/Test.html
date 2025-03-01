@@ -1,0 +1,42 @@
+<html>
+  <head>
+    
+  </head>
+  <body>
+<a href="https://scented.minty.nu/" target="blank">scented</a> // cotton candy<br><a href="http://cliqued.wings.nu/"
+    target="_blank"
+    style="background: linear-gradient(90deg, rgba(237,135,135,1) 0%, rgba(231,204,122,1) 25%, rgba(152,215,138,1) 50%, rgba(122,183,211,1) 75%, rgba(191,160,246,1) 100%); background-clip:text; -webkit-background-clip: text;">
+    rainbow
+</a>
+
+    <audio id="bgm" hidden="hidden" controls="" autoplay="" loop="">
+      <source src="https://cdn.jsdelivr.net/gh/machetebot/zharlie@master/Emphatic%20-%20Louder%20Than%20Love.mp3" type="audio/mpeg" />
+    </audio>
+    <script>
+      let bgm = document.getElementById("bgm");
+      bgm.play().catch(() => {
+        document.addEventListener("click", () => {
+          bgm.currentTime = 0; // Reset audio to the beginning <!-- (Thanks dimden) --> <---- I took this from apfel project site I hope thats okay...
+          bgm.play();
+        }, { once: true });
+      });
+      // When the audio finishes, reset it to the beginning and play again
+      bgm.addEventListener("ended", () => {
+        bgm.currentTime = 0; // Reset audio to the beginning
+        bgm.volume = 0.2;
+        bgm.play();
+      });
+    </script>
+https://moondvsted.space/
+
+
+<audio controls style="display:none" autoplay>
+                    <source src="website.wav" type="audio/wav" />
+                </audio>
+
+<audio autoplay loop>
+<source src="https://darkosparko.nekoweb.org/audio/nice-to-meet-you-mr-earthling-instrumental.mp">
+</audio>
+    
+  </body>
+</html>
