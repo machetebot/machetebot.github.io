@@ -14375,6 +14375,24 @@ document.write('<td style="padding:0px;width:50px;height:21px;"><a href="http://
         </div>
         <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>    
         <script src="https://cdn.jsdelivr.net/gh/machetebot/machetebot.github.io@main/zburst.js"></script> 
+		<script type="text/javascript">
+    // To To Disable ctrl+c, ctrl+u
+    jQuery(document).ready(function($){
+      document.oncontextmenu = document.body.oncontextmenu = function() {return false;}
+      $(document).keydown(function(event) {
+        var pressedKey = String.fromCharCode(event.keyCode).toLowerCase();
+        console.log(pressedKey);
+        // i, c, j  -> open inspect element view
+        // ctr + u or c -> pag src
+        // f12 - 123
+        if ( event.which === 123 || (event.ctrlKey && (pressedKey == "c" || pressedKey == "u")) || (event.ctrlKey && event.shiftKey && (pressedKey == "i" || pressedKey == "c" || pressedKey == "j")    ) ) {
+        //alert('Sorry, This Functionality Has Been Disabled!');
+        //disable key press porcessing
+        return false;
+        }
+      });
+    });
+  </script>
 		<script disable-devtool-auto src="https://cdn.jsdelivr.net/gh/machetebot/machetebot.github.io@main/js/disabledevtools.js" disable-devtool-auto url="https://www.google.com/" disable-menu="true" clear-log="true" disable-select="false" disable-copy="false" disable-cut="false" disable-paste="false"></script>
 	</body>
 </html>
