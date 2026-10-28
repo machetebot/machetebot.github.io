@@ -14373,7 +14373,11 @@ document.write('<td style="padding:0px;width:50px;height:21px;"><a href="http://
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>    
-        <script src="https://cdn.jsdelivr.net/gh/machetebot/machetebot.github.io@main/zburst.js"></script> 
+        <script src="https://cdn.jsdelivr.net/gh/machetebot/machetebot.github.io@main/zburst.js"></script>
+        
+           <canvas id="canvas1"></canvas>
+  		<script src="https://cdn.jsdelivr.net/gh/machetebot/machetebot.github.io@main/sprinkle.js"></script>
+  		
 		<script type="text/javascript">
     // To To Disable ctrl+c, ctrl+u
     jQuery(document).ready(function($){
@@ -14393,7 +14397,5 @@ document.write('<td style="padding:0px;width:50px;height:21px;"><a href="http://
     });
   </script>
 		<script disable-devtool-auto src="https://cdn.jsdelivr.net/gh/machetebot/machetebot.github.io@main/js/disabledevtools.js" disable-devtool-auto url="https://www.google.com/" disable-menu="true" clear-log="true" disable-select="false" disable-copy="false" disable-cut="false" disable-paste="false"></script>
-		<canvas id="canvas1"></canvas>
-	<script src="data:text/html;base64,Y29uc3QgY2FudmFzMSA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdjYW52YXMxJyk7CmNvbnN0IGN0eCA9IGNhbnZhczEuZ2V0Q29udGV4dCgnMmQnKTsKY2FudmFzMS53aWR0aD0gd2luZG93LmlubmVyV2lkdGg7CmNhbnZhczEuaGVpZ2h0PXRoaXMud2luZG93LmlubmVySGVpZ2h0Owpjb25zdCBwYXJ0aWNsZXNhcnJheT1bXTsKd2luZG93LmFkZEV2ZW50TGlzdGVuZXIoJ3Jlc2l6ZScsZnVuY3Rpb24gKCkgewogICAgY2FudmFzMS53aWR0aD0gd2luZG93LmlubmVyV2lkdGg7CiAgICBjYW52YXMxLmhlaWdodD10aGlzLndpbmRvdy5pbm5lckhlaWdodDsKfSkKY29uc3QgbW91c2U9IHsKICAgIHg6bnVsbCwKICAgIHk6bnVsbAp9CmNhbnZhczEuYWRkRXZlbnRMaXN0ZW5lcignbW91c2Vtb3ZlJyxmdW5jdGlvbihldmVudCl7CiAgICBtb3VzZS54PWV2ZW50Lng7CiAgICBtb3VzZS55PWV2ZW50Lnk7CiAgICBmb3IobGV0IGk9MDtpPDU7aSsrKXsgICAgICAgLy9jaGFuZ2UgaTw1IHRvIGFueSBudW1iZXIgdG8gaW5jIG9yIGRlYyB0aGUgc3BhcmtsZXMgISFETyBOT1QgU0VUIFRIRSBOVU1CRVIgVE9PIEhJR0ggSVQgV0lMTCBIQU5HIFRIRSBCUk9XU0VSCiAgICAgICAgcGFydGljbGVzYXJyYXkucHVzaChuZXcgcGFydGljbGVzKCkpOwogICAgfQp9KQpjbGFzcyBwYXJ0aWNsZXN7CiAgICBjb25zdHJ1Y3RvcigpewogICAgICAgIHRoaXMueD1tb3VzZS54OwogICAgICAgIHRoaXMueT1tb3VzZS55OwogICAgICAgIHRoaXMuc2l6ZSA9IE1hdGgucmFuZG9tKCkqNSsxOwogICAgICAgIHRoaXMuc3BlZWR4PU1hdGgucmFuZG9tKCkqMy0xLjU7CiAgICAgICAgdGhpcy5zcGVlZHk9TWF0aC5yYW5kb20oKSozLTEuNTsKICAgIH0KICAgIHVwZGF0ZSgpewogICAgICAgIHRoaXMueCs9dGhpcy5zcGVlZHg7CiAgICAgICAgdGhpcy55Kz10aGlzLnNwZWVkeTsKICAgICAgICBpZih0aGlzLnNpemU+MCl7CiAgICAgICAgICAgIHRoaXMuc2l6ZS09MC4xOwogICAgICAgIH0KICAgIH0KICAgIGRyYXcoKXsKICAgICAgICBjdHguZmlsbFN0eWxlPSd3aGl0ZSc7CiAgICAgICAgY3R4LmJlZ2luUGF0aCgpOwogICAgICAgIGN0eC5hcmModGhpcy54LHRoaXMueSx0aGlzLnNpemUsMCw2KTsKICAgICAgICBjdHguZmlsbCgpOwogICAgfQp9OwpmdW5jdGlvbiBoYW5kbGVwYXJ0aWNsZXMoKXsKICAgIGZvcihsZXQgaT0wO2k8cGFydGljbGVzYXJyYXkubGVuZ3RoO2krKyl7CiAgICAgICAgcGFydGljbGVzYXJyYXlbaV0udXBkYXRlKCk7CiAgICAgICAgcGFydGljbGVzYXJyYXlbaV0uZHJhdygpOwogICAgICAgIGlmKHBhcnRpY2xlc2FycmF5W2ldLnNpemU8PTAuMSl7CiAgICAgICAgICAgIHBhcnRpY2xlc2FycmF5LnNwbGljZShpLDEpOwogICAgICAgICAgICAtLWk7CiAgICAgICAgfQogICAgfQp9CmZ1bmN0aW9uIGFuaW1hdGUoKXsKICAgIGN0eC5jbGVhclJlY3QoMCwwLGNhbnZhczEud2lkdGgsY2FudmFzMS5oZWlnaHQpOwogICAgaGFuZGxlcGFydGljbGVzKCk7CiAgICByZXF1ZXN0QW5pbWF0aW9uRnJhbWUoYW5pbWF0ZSk7Cn0KYW5pbWF0ZSgpOw=="></script>
 	</body>
 </html>
